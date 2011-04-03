@@ -1,1 +1,6 @@
 Test change from Windows
+
+You need to have rspec 2 and watir-webdriver gems installed to make this work
+sudo gem install watir-webdriver
+sudo gem install rspec
+
