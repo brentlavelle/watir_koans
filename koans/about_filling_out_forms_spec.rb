@@ -4,7 +4,6 @@ require 'rubygems'
 require 'rspec'
 require 'watir-webdriver'
 
-
 describe "Simple navigation and content checking" do
   before(:all) do
     html_dir = File.expand_path(File.dirname(__FILE__) + '/html')
@@ -35,4 +34,19 @@ describe "Simple navigation and content checking" do
     @f.text_field(:name => "firstname").id.should == "fname"
   end
 
+  it "should flash 10 times and return the number of flashes" do
+    # Flashing in the browser can help you identify page elements sometimes \
+    # the flashing is not where we expect to see it.
+    @f.text_field(:id => "fname").flash.should == 10
+  end
+
+  it "has an HTML method for the view source crowd" do
+    # Looking at the HTML, especially in irb, can help demystify a test, however it created from the DOM and
+    # will probably be different that the document served
+    html_text = @f.text_field(:id => "fname").html
+    html_text.should match(/^\<input /)
+    html_text.should match(/ type="text" /)
+    html_text.should match(/ name="firstname" /)
+    html_text.should match(/ id="fname" /)
+  end
 end
