@@ -50,12 +50,11 @@ describe "instance references can be changed" do
 
   it "should see the instance new value via the instance var" do
     @instance_hash[:i_live].should == "modified hash"
-    # What just happened? The string was not reset between
-    # examples. It points back the same memory but the contents
-    # of the memory have changed.
+    # What just happened? The instance variable was not reset between
+    # examples. It points back the same memory but the object has changed.
   end
 
-  it "should set the class hash to a different hash" do
+  it "should set the instance hash to a different hash" do
     @instance_hash = {:i_live => 'new hash'}
     # This hash will be lost forever when @instance_hash
     # goes out of scope when this example finishes.
