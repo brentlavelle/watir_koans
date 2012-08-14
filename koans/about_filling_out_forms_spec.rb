@@ -45,8 +45,8 @@ describe "Simple navigation and content checking" do
     # will probably be different that the document served
     html_text = @f.text_field(:id => "fname").html
     html_text.should match(/^\<input /)
-    html_text.should match(/ type="text" /)
-    html_text.should match(/ name="firstname" /)
-    html_text.should match(/ id="fname" /)
+    html_text.should match(/\btype="text"/)
+    html_text.should match(/\bname="firstname"/)
+    html_text.should match(/\bid="fname"/)
   end
 end
