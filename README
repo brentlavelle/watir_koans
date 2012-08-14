@@ -1,6 +1,3 @@
-Test change from Windows
+Started on a Mac running Leopard now Mountain Lion.
 
-You need to have rspec 2 and watir-webdriver gems installed to make this work
-sudo gem install watir-webdriver
-sudo gem install rspec
-
+Since this uses webdriver you will need Firefox installed
