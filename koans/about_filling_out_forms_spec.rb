@@ -4,7 +4,7 @@ require 'rubygems'
 require 'rspec'
 require 'watir-webdriver'
 
-describe "Simple navigation and content checking" do
+describe "Working with forms" do
   before(:all) do
     html_dir = File.expand_path(File.dirname(__FILE__) + '/html')
     simple_html = "FILE://#{html_dir}/more.html"
