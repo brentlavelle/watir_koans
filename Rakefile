@@ -4,5 +4,5 @@ task :default => :walk_on_watir
 
 task :walk_on_watir do
   cd 'koans'
-  ruby 'path_to_watir.rb'
+  ruby 'path_to_watir_spec.rb'
 end

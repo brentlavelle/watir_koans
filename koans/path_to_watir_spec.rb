@@ -2,5 +2,5 @@
 
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'about_getting_started.rb'
+require 'about_getting_started_spec.rb'
 require 'about_filling_out_forms_spec.rb'
