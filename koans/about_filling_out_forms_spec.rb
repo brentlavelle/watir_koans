@@ -45,6 +45,15 @@ describe "Working with forms" do
     female_radio.set?.should be_false
   end
 
+  it "can set and query from a select list" do
+    select_list =  @form.select_list(name: 'language')
+    select_list.exists?.should be_true
+    select_list.option(:text, 'Perl').value.should == 'perl'
+    select_list.option(:text, 'Ruby').click
+    select_list.value.should == 'ruby'
+    select_list.value.should_not == 'python'
+  end
+
   it "should flash 10 times and return the number of flashes" do
     # Flashing in the browser can help you identify page elements sometimes \
     # the flashing is not where we expect to see it.
