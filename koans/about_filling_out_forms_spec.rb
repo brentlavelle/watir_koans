@@ -34,6 +34,17 @@ describe "Working with forms" do
     @form.text_field(:name => "firstname").id.should == "fname"
   end
 
+  it "can set and query radio buttons" do
+    female_radio = @form.radio(:name => 'gender', :value => 'female')
+    male_radio = @form.radio(:name => 'gender', :value => 'male')
+    female_radio.set
+    female_radio.set?.should be_true
+    male_radio.set?.should be_false
+    male_radio.set
+    male_radio.set?.should be_true
+    female_radio.set?.should be_false
+  end
+
   it "should flash 10 times and return the number of flashes" do
     # Flashing in the browser can help you identify page elements sometimes \
     # the flashing is not where we expect to see it.

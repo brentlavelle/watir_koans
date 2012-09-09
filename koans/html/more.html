@@ -7,8 +7,12 @@
   <form id="newuser">
       First name: <input type="text" id="fname" name="firstname" /><br />
       Last name: <input type="text" id="lname" name="lastname" /><br />
-      <input type="radio" name="sex" value="male" /> Male<br />
-      <input type="radio" name="sex" value="female" /> Female<br />
+      <ul class="radio">
+          <li><input type="radio" name="gender" id="male" value="male" /><label for="male">Male</label></li>
+          <li><input type="radio" name="gender" id="female" value="female" /><label for="female">Female</label></li>
+      </ul>
+
+
       <input type="submit" value="Submit" />
   </form>
  </body>
